@@ -4,6 +4,13 @@ public class Produto {
 	private int Id;
 	private String nome, descricao;
 	
+	public Produto(int id, String nome, String descricao) {
+		this.Id = id;
+		this.nome = nome;
+		this.descricao = descricao;
+		
+	}
+	
 	
 	public Produto(String nome, String descricao) {
 		this.nome = nome;
