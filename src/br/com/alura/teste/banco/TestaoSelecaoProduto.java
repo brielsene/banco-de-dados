@@ -14,6 +14,7 @@ public class TestaoSelecaoProduto {
 //		for(int i = 1; i<18; i++) {
 //			produtoDao.removeProdutoPeloId(i);
 //		}
+		produtoDao.removeProdutoPeloId(new Integer(23));
 		
 		List<Produto>listaDeProduto = produtoDao.listaProdutos();
 		
