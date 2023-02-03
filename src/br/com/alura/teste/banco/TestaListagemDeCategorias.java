@@ -15,19 +15,14 @@ public class TestaListagemDeCategorias {
 		
 	Connection conn = new ConnectionFactory().iniciaConexao();	
 	CategoriaDAO categoriaDAO = new CategoriaDAO(conn);
-	List<Categoria>lista = categoriaDAO.listaCategoria();
+	List<Categoria>lista = categoriaDAO.listaCategoriaComProdutos();
 	lista.stream().forEach(l ->
-	
 	{
 		System.out.println(l.getNome());
-		try {
-			for(Produto produto : new ProdutoDAO(conn).buscar(l) ) {
+		for(Produto produto : l.getProdutos() ) {
 				System.out.println(l.getNome()+"  -  "+produto.getNome());
 			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
 	});
 	
 	
